@@ -1,9 +1,13 @@
 //import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import { Header } from 'app/components/shared/Header'
 import { Footer } from 'app/components/shared/Footer'
+import 'app/sass/globals.sass'
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({ 
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+})
 
 export default function RootLayout({
   children,
@@ -13,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head />
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Header />
         {children}
         <Footer />
